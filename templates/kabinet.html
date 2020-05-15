@@ -1,0 +1,26 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block content %}
+    <table id="table" class="table table-hover  table-light table-striped table-bordered">
+        <thead class="thead-dark">
+        <button type="button" class="bg-light text-dark btn-block "><h3>Список кабинетов</h3></button>
+        <tr>
+            <th scope="col">№</th>
+            <th scope="col">Кабинет</th>
+            <th scope="col">Тип кабинета</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for kabinet in kabinetter %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td><a href="{% url 'kabinetti_koruu' id=kabinet.id %}">{{ kabinet.Naimenovanie }}</a></td>
+                <td>{{ kabinet.NamKabinet }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+
+

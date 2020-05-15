@@ -1,0 +1,39 @@
+{% extends 'wrapper.html' %}
+{% block content %}
+
+        <table id="table" class="table  table-hover  table-light table-striped table-bordered">
+            <button type="button" class="bg-light text-dark btn-block "><h3>Cписок мебели</h3></button>
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">Кабинет</th>
+                <th scope="col">ФИО</th>
+                <th scope="col">Мебель</th>
+                <th scope="col">Ед.изм.</th>
+                <th scope="col">КодТМУ</th>
+                <th scope="col">Количество</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for KlassMebel in KlassMebeler %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ KlassMebel.kabinet }}</td>
+                    <td>{{ KlassMebel.engineer }}</td>
+                    <td>{{ KlassMebel.aty }}</td>
+                    <td>{{ KlassMebel.Edizm }}</td>
+                    <td>{{ KlassMebel.kodTMU }}</td>
+                    <td>{{ KlassMebel.kolich }}</td>
+
+
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+
+
+
+
+{% endblock %}

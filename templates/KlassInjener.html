@@ -1,0 +1,38 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block content %}
+    <table id="table" class="table  table-hover  table-light table-striped table-bordered">
+        <button type="button" class="bg-light text-dark btn-block "><h3>Инженеры и лаборанты</h3></button>
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">№</th>
+            <th scope="col">Photo</th>
+            <th scope="col">Кабинет</th>
+            <th scope="col">ФИО</th>
+            <th scope="col">Должность</th>
+            <th scope="col">Номер телефона</th>
+            <th scope="col">время начала работы</th>
+            <th scope="col">время окончания работы/th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for KlassInjener in KlassInjenerler %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td><img src="{{ KlassInjener.photo.url }}" alt="knu" height="200px"></td>
+                <td>{{ KlassInjener.kabinet }}</td>
+                <td>{{ KlassInjener.aty }}</td>
+                <td>{{ KlassInjener.doljnosti }}</td>
+                <td>{{ KlassInjener.tel }}</td>
+                <td>{{ KlassInjener.start_work }}</td>
+                <td>{{ KlassInjener.end_work }}</td>
+
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+{% endblock %}
+
+
