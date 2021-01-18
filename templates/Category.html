@@ -3,7 +3,7 @@
 {% block content %}
     <table id="table" class="table table-hover  table-light table-striped table-bordered">
         <thead class="thead-dark">
-        <button type="button" class="bg-light text-dark btn-block "><h3>Категория</h3></button>
+        <button type="button" class="bg-light text-dark btn-block "><h3>Категория ФИИТ</h3></button>
         <tr>
             <th scope="col">№</th>
             <th scope="col">Категория</th>
@@ -13,9 +13,8 @@
         {% for category in Categoryler %}
             <tr>
                 <th scope="row">{{ forloop.counter }}</th>
-                <td>{{ category }}</td>
+                <td><a href="{% url 'category_koruu' id=category.id %}">{{ category.Naimenovanie }}</a></td>
             </tr>
-
 
         {% endfor %}
         </tbody>

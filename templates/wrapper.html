@@ -11,6 +11,8 @@
           type="text/css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.1/css/buttons.dataTables.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 </head>
 <body style="background: silver " class="card bg-info">
@@ -20,41 +22,62 @@
         <img src="{% static 'landing/image/logotip_original.jpg' %}" class="img-fluid" alt="Responsive image">
 
         <h1 class="text-info">База данных "Учет компьютерной техники"</h1>
-        <p>
 
         <div>
             <a href="/" class="btn btn-success btn-lg">Главная страница</a>
-            <a href="{% url 'kabinet' %}" class="btn btn-primary btn-lg">Кабинет</a>
-            <a href="{% url 'Category' %}" class="btn btn-primary btn-lg">Категория</a>
-            <a href="{% url 'NalichiTehniki' %}" class="btn btn-primary btn-lg">Наличие техники</a>
-            <a href="{% url 'KlassMebel' %}" class="btn btn-primary btn-lg">Мебель</a>
+            <div class="btn-group">
+                <a href="{% url 'NalichiTehniki' %}" class="btn btn-primary btn-lg">Наличие техники ФИИТ</a>
+                <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                        data-toggle="dropdown">
+                </button>
+                <div class="dropdown-menu">
+                    <a href="{% url 'sostoyanieny_koruu' filter='рабочий' %}" class="dropdown-item">Рабочий</a>
+                    <a href="{% url 'sostoyanieny_koruu' filter='не рабочий' %}" class="dropdown-item">Не Рабочий</a>
+                    <a href="{% url 'Category' %}" class="dropdown-item">Категория</a>
+                    <a href="{% url 'kabinet' %}" class="dropdown-item">Кабинет</a>
+                    <a href="{% url 'KlassInjener' %}" class="dropdown-item">Инженеры и лаборанты</a>
+                </div>
 
-
-
-
-            <button type="button" class="btn btn-info dropdown-toggle btn-lg" data-toggle="dropdown">
-                Инженер
-            </button>
-            <div class="dropdown-menu">
-                <a href="{% url 'Ingener' %}" class="btn btn-primary btn-lg dropdown-item">Инженер-программист</a>
-                <a href="{% url 'KlassInjener' %}" class="btn btn-primary btn-lg dropdown-item">Инженеры и лаборанты</a>
             </div>
+
+            <div class="btn-group">
+                <a href="{% url 'Available_techniques' %}" class="btn btn-primary btn-lg">Наличие техники ССиИТ ЦИТ</a>
+                <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                        data-toggle="dropdown">
+                    <span class="caret"></span>
+                </button>
+                <div class="dropdown-menu">
+                    <a href="{% url 'sostoyani_koruu' filter='рабочий' %}" class="dropdown-item">Рабочий</a>
+                    <a href="{% url 'sostoyani_koruu' filter='не рабочий' %}" class="dropdown-item">Не Рабочий</a>
+                    <a href="{% url 'Categories' %}" class="dropdown-item">Категория</a>
+                    <a href="{% url 'Cabinet' %}" class="dropdown-item">Кабинет</a>
+                    <a href="{% url 'Engineers' %}" class="dropdown-item">Инженеры и лаборанты</a>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="btn btn-primary btn-lg">Выход</a>
+                {% else %}
+                <a href="{% url 'login' %}" class="btn btn-primary btn-lg">Войти</a>
+                {% endif %}
+            </div>
+
+
         </div>
-
-
-        </p>
     </div>
+
+
 </div>
+
 <div class="container">
     {% block content %}
     {% endblock %}
 </div>
 
-<div class="jumbotron text-center" style="margin-bottom:0">
-    &copy; 2020. Все права защищены.
-</div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -77,5 +100,10 @@
         });
     });
 </script>
+
+
+
+
 </body>
 </html>
+

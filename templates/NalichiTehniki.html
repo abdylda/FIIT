@@ -1,7 +1,7 @@
 {% extends 'wrapper.html' %}
 {% block content %}
         <table id="table" class="table  table-hover  table-light table-striped table-bordered">
-            <button type="button" class="bg-light text-dark btn-block "><h3>Наличие техники</h3></button>
+            <button type="button" class="bg-light text-dark btn-block "><h3>Наличие техники ФИИТ</h3></button>
             <thead class="thead-dark">
             <tr>
                 <th scope="col">№</th>
@@ -12,6 +12,7 @@
                 <th scope="col">КодТМУ</th>
                 <th scope="col">Наименования</th>
                 <th scope="col">Количество</th>
+                <th scope="col">Состояние</th>
 
             </tr>
             </thead>
@@ -25,7 +26,8 @@
                     <td>{{ NalichiTehniki.Edizm }}</td>
                     <td>{{ NalichiTehniki.kodTMU }}</td>
                     <td>{{ NalichiTehniki.Naimenovanie }}</td>
-                    <td>{{ NalichiTehniki.kolich }}</td>
+                    <td>{{ NalichiTehniki.Kolich }}</td>
+                    <td>{{ NalichiTehniki.sostoyanie }}</td>
 
                 </tr>
             {% endfor %}

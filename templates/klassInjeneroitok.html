@@ -1,10 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block content %}
+    <table id="table" class="table  table-hover  table-light table-striped table-bordered">
+        <button type="button" class="bg-light text-dark btn-block "><h3>Инженеры и лаборанты</h3></button>
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">№</th>
+            <th scope="col">Photo</th>
+            <th scope="col">Кабинет</th>
+            <th scope="col">ФИО</th>
+            <th scope="col">Должность</th>
+            <th scope="col">Номер телефона</th>
+            <th scope="col">время начала работы</th>
+            <th scope="col">время окончания работы</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for Engineers in Engineersler %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td><img src="{{ Engineers.photo.url }}" alt="knu" height="200px"></td>
+                <td>{{ Engineers.Cabinet }}</td>
+                <td>{{ Engineers.fio }}</td>
+                <td>{{ Engineers.position }}</td>
+                <td>{{ Engineers.phone_number }}</td>
+                <td>{{ Engineers.start_work }}</td>
+                <td>{{ Engineers.end_work }}</td>
+
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+{% endblock %}
+
+

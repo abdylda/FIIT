@@ -1,1 +1,19 @@
 python manage.py startapp (landing папка негиздочу)
+
+
+->>>>>>>>>>>>>>>> bul github-ka juktoo uchun
+git add .
+git commit -m "kalagan koment"
+git push origin master
+
+->>>>>>>>>>>>>>>>> githubtan ozuno kochurup aluu uchum
+
+git pull origin master
+
+
+->>>>>>>>>>>>>>>>> githubtan jany proekt kochurup aluu
+
+git clone https://github.com/abdylda/knu_test.git
+
+->>>>>>>>>>>>> artka chyguu proetiden
+cd ..

@@ -24,6 +24,9 @@ Django
     python manage.py makemigrations (1 базаны озгорткон сайын аткару зарыл)
     python manage.py migrate (2 базаны озгорткон сайын аткару зарыл)
     python manage.py runserver
+    python manage.py startapp cciit (Жаны )
+
+
 Database
       
     create database booking character set utf8 collate utf8_unicode_ci;

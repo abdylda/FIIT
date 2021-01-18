@@ -1,10 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'wrapper.html' %}
+{% block content %}
+        <table id="table" class="table  table-hover  table-light table-striped table-bordered">
+            <button type="button" class="bg-light text-dark btn-block "><h3>Наличие техники</h3></button>
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">№</th>
+                <th scope="col">Кабинет</th>
+                <th scope="col">Тип кабинета</th>
+                <th scope="col">Категории</th>
+                <th scope="col">Ед.изм.</th>
+                <th scope="col">КодТМУ</th>
+                <th scope="col">Наименования</th>
+                <th scope="col">Количество</th>
+                <th scope="col">Состояние</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for Available_techniques in Available_techniquesler %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ Available_techniques.Cabinet }}</td>
+                    <td>{{ Available_techniques.Cabinet_name }}</td>
+                    <td>{{ Available_techniques.Categories }}</td>
+                    <td>{{ Available_techniques.Unit }}</td>
+                    <td>{{ Available_techniques.KODTMU }}</td>
+                    <td>{{ Available_techniques.Names }}</td>
+                    <td>{{ Available_techniques.Quantity }}</td>
+                    <td>{{ Available_techniques.sostoyani }}</td>
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+
+
+{% endblock %}

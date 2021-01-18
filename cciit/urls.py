@@ -7,17 +7,11 @@ import landing
 from django.contrib.auth.views import LoginView
 
 urlpatterns = [
-    path('', views.test, name='index'),
-    path('kabinet/', views.kabinet, name='kabinet'),
-    path('Category/', views.category, name='Category'),
-    path('NalichiTehniki/', views.nalichiTehniki, name='NalichiTehniki'),
-    path('NalichiTehnikioitok/', views.nalichiTehnikioitok, name='NalichiTehnikioitok'),
-    path('KlassInjener/', views.klassInjener, name='KlassInjener'),
-    path('Ingener/', views.Ingener, name='Ingener'),
-    path('KlassMebel/', views.klassMebel, name='KlassMebel'),
-    path('kabinetti/koruu/<int:id>', views.kabinet_koruu, name='kabinetti_koruu'),
-    path('categoryny/koruu/<int:id>', views.category_koruu, name='category_koruu'),
-    path('sostoyanieny/koruu/<str:filter>', views.sostoyanieny_koruu, name='sostoyanieny_koruu'),
-
-
+    path('Available_techniques/', views.available_techniques, name='Available_techniques'),
+    path('sostoyani/koruu/<str:filter>', views.sostoyani_koruu, name='sostoyani_koruu'),
+    path('Categories/', views.сategories, name='Categories'),
+    path('categoriesyny/koruu/<int:id>', views.сategories_koruu, name='categories_koruu'),
+    path('Cabinet/', views.Cabinetnew, name='Cabinet'),
+    path('cabinetti/koruu/<int:id>', views.сabinet_koruu, name='сabinet_koruu'),
+    path('Engineers/', views.klassInjenernew, name='Engineers'),
 ]
