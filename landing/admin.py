@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from landing.models import Category, Edizm, NalichiTehniki, NamKabinet, Mebel, Engineer, Kabinet,  Ingener
+from landing.models import Category, Edizm, NalichiTehniki, NamKabinet, Mebel, Engineer, Kabinet, Ingener
 
 
 class catigoriAdmin(admin.ModelAdmin):
@@ -45,13 +45,16 @@ admin.site.register(Engineer, EngineerAdmin)
 
 
 
-
 # class KlassMebelAdmin(admin.ModelAdmin):
 #     list_display = ['Kabinet', 'NamKabinet', 'FIO', 'Doljnosti', 'Mebel', 'Edizm', 'kodTMU', 'kolich']
 #     list_filter = ['Kabinet', 'NamKabinet', 'Doljnosti', 'Mebel']
 #
 #
 # admin.site.register(Mebel, KlassMebelAdmin)
+
+
+
+
 
 admin.site.site_title = "Администратор сайт Абдулла"
 admin.site.site_header = "Администратор сайт Абдулла"

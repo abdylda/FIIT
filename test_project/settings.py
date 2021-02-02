@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'landing',
     'test',
     'cciit',
+    'Documents',
 ]
 
 MIDDLEWARE = [
@@ -114,3 +115,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+

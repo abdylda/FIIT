@@ -3,6 +3,8 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path
 from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 import landing
 from django.contrib.auth.views import LoginView
 
@@ -17,6 +19,6 @@ urlpatterns = [
     path('kabinetti/koruu/<int:id>', views.kabinet_koruu, name='kabinetti_koruu'),
     path('categoryny/koruu/<int:id>', views.category_koruu, name='category_koruu'),
     path('sostoyanieny/koruu/<str:filter>', views.sostoyanieny_koruu, name='sostoyanieny_koruu'),
+    ] + static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
 
 
-]
