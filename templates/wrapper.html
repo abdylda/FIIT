@@ -23,6 +23,10 @@
 
         <h1 class="text-info">База данных "Учет компьютерной техники"</h1>
 
+
+
+
+
         <div>
             <a href="/" class="btn btn-success btn-lg">Главная страница</a>
             <div class="btn-group">
@@ -36,6 +40,7 @@
                     <a href="{% url 'Category' %}" class="dropdown-item">Категория</a>
                     <a href="{% url 'kabinet' %}" class="dropdown-item">Кабинет</a>
                     <a href="{% url 'KlassInjener' %}" class="dropdown-item">Инженеры и лаборанты</a>
+                    <a href="{% url 'document' %}" class="dropdown-item">Документы</a>
                 </div>
 
             </div>
@@ -54,6 +59,8 @@
                     <a href="{% url 'Engineers' %}" class="dropdown-item">Инженеры и лаборанты</a>
                 </div>
             </div>
+
+
 
             <div class="btn-group">
                 {% if user.is_authenticated %}

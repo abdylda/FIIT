@@ -19,6 +19,8 @@ urlpatterns = [
     path('kabinetti/koruu/<int:id>', views.kabinet_koruu, name='kabinetti_koruu'),
     path('categoryny/koruu/<int:id>', views.category_koruu, name='category_koruu'),
     path('sostoyanieny/koruu/<str:filter>', views.sostoyanieny_koruu, name='sostoyanieny_koruu'),
+    path('Document/', views.document, name='document'),
+    path('Document/upload/' , views.upload_document, name="upload_document")
     ] + static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
 
 

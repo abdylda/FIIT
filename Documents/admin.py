@@ -4,8 +4,7 @@ from Documents.models import Document
 
 
 class DocumentAdmin(admin.ModelAdmin):
-    pass
-
+    list_display = ['name', 'document']
 admin.site.register(Document, DocumentAdmin)
 
 

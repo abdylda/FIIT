@@ -1,0 +1,26 @@
+{% extends 'wrapper.html' %}
+{% block content %}
+
+
+  <table class="table mb-0">
+    <thead>
+      <tr>
+        <th>Название документы</th>
+        <th>Скачать</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for Documentel in Documenter %}
+        <tr>
+               <td>{{ Documentel.name }}</td>
+          <td>
+            <a href="{{ Documentel.document.url }}" class="btn btn-primary btn-sm">
+              Скачать
+            </a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}

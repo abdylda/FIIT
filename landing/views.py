@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 from django.views.generic import CreateView, FormView
+
+from Documents.models import Document
 from landing.forms import LoginForm
 from landing.models import Kabinet, Category, NalichiTehniki, Engineer, Mebel
 from test_project import settings
@@ -67,3 +69,15 @@ def category_koruu(request, id):
 def sostoyanieny_koruu(request, filter):
     buiumdar = NalichiTehniki.objects.filter(sostoyanie=filter)
     return render(request, 'NalichiTehniki.html', {'NalichiTehnikiler': buiumdar})
+
+
+@login_required
+def document(request):
+    Documenter = Document.objects.all()
+    return render(request, 'Document.html', {'Documenter': Documenter})
+
+def upload_document(reguest):
+    return render(reguest, 'upload_list.html')
+
+def upload_document(reguest):
+    return render(reguest, 'upload_document.html')
