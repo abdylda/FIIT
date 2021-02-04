@@ -4,7 +4,7 @@ python manage.py startapp (landing папка негиздочу)
 ->>>>>>>>>>>>>>>> bul github-ka juktoo uchun
 git add .
 git commit -m "kalagan koment"
-git push origin master
+git push origin master bul jerge git degi proektinin atyn jazysh kerek
 
 ->>>>>>>>>>>>>>>>> githubtan ozuno kochurup aluu uchum
 

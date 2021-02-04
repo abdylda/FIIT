@@ -2,9 +2,11 @@
 {% block content %}
 
 
-  <table class="table mb-0">
-    <thead>
+  <table  class="table  table-hover  table-light table-striped table-bordered">
+            <button type="button" class="bg-light text-dark btn-block "><h3>Документы</h3></button>
+            <thead class="thead-dark">
       <tr>
+          <th scope="col">№</th>
         <th>Название документы</th>
         <th>Скачать</th>
       </tr>
@@ -12,6 +14,7 @@
     <tbody>
       {% for Documentel in Documenter %}
         <tr>
+        <th scope="row">{{ forloop.counter }}</th>
                <td>{{ Documentel.name }}</td>
           <td>
             <a href="{{ Documentel.document.url }}" class="btn btn-primary btn-sm">
